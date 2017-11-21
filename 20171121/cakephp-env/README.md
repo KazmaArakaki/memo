@@ -6,7 +6,7 @@
 $ sudo vim /etc/selinux/config
 ```
 
-**config**
+**config** (excerption)
 
 ```
 # This file controls the state of SELinux on the system.
@@ -63,7 +63,7 @@ $ sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 $ sudo yum install --enablerepo=remi-php71 php php-fpm php-intl php-mbstring php-mysql php-simplexml
 ```
 
-## Install MySQL (MariaDB)N
+## Install MySQL (MariaDB)
 
 ``` sh
 $ sudo vim /etc/yum.repos.d/mariadb.repo
@@ -251,7 +251,7 @@ $ vim config/app.php
              */
             //'port' => 'non_standard_port_number',
             'username' => 'cake_user',
-            'password' => 'twi1ight',
+            'password' => '[PASSWORD]',
             'database' => 'cake_db',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
@@ -290,7 +290,7 @@ $ vim config/app.php
             'host' => 'localhost',
             //'port' => 'non_standard_port_number',
             'username' => 'cake_user',
-            'password' => 'twi1ight',
+            'password' => '[PASSWORD]',
             'database' => 'cake_db',
             'encoding' => 'utf8',
             'timezone' => 'UTC',

@@ -1,4 +1,6 @@
-# Disable SELINUX
+# Instruction to install CakePHP 3 on Cent OS 7
+
+## Disable SELINUX
 
 ``` sh
 $ sudo vim /etc/selinux/config
@@ -19,13 +21,13 @@ SELINUX=permissive
 $ sudo reboot
 ```
 
-# Install required applications
+## Install required applications
 
 ``` sh
 $ sudo yum install unzip wget
 ```
 
-# Install Nginx
+## Install Nginx
 
 ``` sh
 $ sudo vim /etc/yum.repos.d/nginx.repo
@@ -53,7 +55,7 @@ enabled=0
 $ sudo yum install nginx
 ```
 
-# Install PHP, PHP-FPM and extensions
+## Install PHP, PHP-FPM and extensions
 
 ``` sh
 $ sudo yum install epel-release
@@ -61,7 +63,7 @@ $ sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
 $ sudo yum install --enablerepo=remi-php71 php php-fpm php-intl php-mbstring php-mysql php-simplexml
 ```
 
-# Install MySQL (MariaDB)N
+## Install MySQL (MariaDB)N
 
 ``` sh
 $ sudo vim /etc/yum.repos.d/mariadb.repo
@@ -81,7 +83,7 @@ gpgcheck=1
 $ sudo yum install mariadb MariaDB-server
 ```
 
-# Create project directory
+## Create project directory
 
 ``` sh
 $ sudo mkdir -p /var/www/cakephp_app
@@ -89,7 +91,7 @@ $ sudo cd /var/www/cakephp_app
 $ sudo chown kazma:kazma .
 ```
 
-# Get composer
+## Get composer
 
 ``` sh
 $ wget https://getcomposer.org/composer.phar
@@ -97,13 +99,13 @@ $ sudo mv composer.phar /usr/local/bin/composer
 $ sudo chmod 744 /usr/local/bin/composer 
 ```
 
-# Install CakePHP
+## Install CakePHP
 
 ``` sh
 $ composer create-project --prefer-dist cakephp/app .
 ```
 
-# Configure Nginx
+## Configure Nginx
 
 ``` sh
 $ sudo vim /etc/nginx/conf.d/default.conf
@@ -136,7 +138,7 @@ server {
 $ sudo systemctl start nginx
 ```
 
-# Configure PHP
+## Configure PHP
 
 ``` sh
 $ sudo vim /etc/php.ini
@@ -171,7 +173,7 @@ $ sudo vim /etc/php.ini
 extension=intl.so
 ```
 
-# Configure PHP-FPM
+## Configure PHP-FPM
 
 ``` sh
 $ sudo vim /etc/php-fpm.d/www.conf
@@ -193,7 +195,7 @@ group = nginx
 $ sudo systemctl start php-fpm
 ```
 
-# Configure MySQL (MariaDB)
+## Configure MySQL (MariaDB)
 
 ``` sh
 sudo vim /etc/my.cnf.d/server.cnf
@@ -219,7 +221,7 @@ $ mysql -u root -p
 > FLUSH PRIVILEGES;
 ```
 
-# Configure CakePHP
+## Configure CakePHP
 
 ``` sh
 $ vim config/app.php

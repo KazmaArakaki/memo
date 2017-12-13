@@ -19,6 +19,12 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+nnoremap <C-w>h :vsplit<CR>
+nnoremap <C-w>j :split<CR> <C-w>j
+nnoremap <C-w>k :split<CR>
+nnoremap <C-w>l :vsplit<CR> <C-w>l
+
+nnoremap / /\v
 
 autocmd QuickFixCmdPost *grep* cwindow
 

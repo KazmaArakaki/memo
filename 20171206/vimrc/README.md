@@ -37,6 +37,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 call neobundle#end()
 NeoBundleCheck

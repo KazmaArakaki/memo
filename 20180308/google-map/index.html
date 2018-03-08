@@ -17,7 +17,16 @@
         });
 
         map.addListener("click", event => {
-          debugger;
+          const lat = event.latLng.lat();
+          const lng = event.latLng.lng();
+          
+          new google.maps.Marker({
+            "map": map,
+            "position": {
+              "lat": lat,
+              "lng": lng
+            }
+          });
         });
       }
     </script>

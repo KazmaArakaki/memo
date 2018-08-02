@@ -82,3 +82,5 @@ class CustomScrollItemView: UIView {
 ```
 
 **Main.storyboard**
+
+![Main.storyboard](https://raw.githubusercontent.com/KazmaArakaki/memo/master/20180802/custom-scroll-view/main_storyboard.png)

@@ -40,8 +40,6 @@ class CollectionScrollView: UIView {
         self.rightAnchor.constraint(equalTo: collectionView.rightAnchor, constant: (self.bounds.size.width - self.itemWidth) / 2).isActive = true
         self.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor).isActive = true
         self.leftAnchor.constraint(equalTo: collectionView.leftAnchor, constant: -1 * (self.bounds.size.width - self.itemWidth) / 2).isActive = true
-        
-        collectionView.frame = self.frame
     }
     
     class OverlapCollectionViewFlowLayout: UICollectionViewFlowLayout {

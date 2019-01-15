@@ -29,6 +29,48 @@
     return mesh;
   })());
 
+  renderer.domElement.addEventListener("click", (event) => {
+    const clickPoint = new THREE.Vector2(0, 0);
+
+    clickPoint.x = (() => {
+      const pointerOffsetX = event.clientX - event.currentTarget.offsetLeft;
+      const canvasWidth = event.currentTarget.offsetWidth;
+
+      return (pointerOffsetX / canvasWidth) * 2 - 1;
+    })();
+
+    clickPoint.y = (() => {
+      const pointerOffsetY = event.clientY - event.currentTarget.offsetTop;
+      const canvasHeight = event.currentTarget.offsetHeight;
+
+      return -1 * (pointerOffsetY / canvasHeight) * 2 + 1;
+    })();
+
+    const raycaster = (() => {
+      const raycaster = new THREE.Raycaster();
+
+      raycaster.setFromCamera(clickPoint, camera);
+
+      return raycaster;
+    })();
+
+    const intersects = raycaster.intersectObjects(scene.children);
+
+    if (intersects.length > 0) {
+      const customEvent = new CustomEvent("clickthreeobject", {
+        detail: {
+          intersects: intersects,
+        }
+      });
+
+      event.currentTarget.dispatchEvent(customEvent);
+    }
+  });
+
+  renderer.domElement.addEventListener("clickthreeobject", (event) => {
+    console.log(event.details.intersects);
+  });
+
   const animate = () => {
     requestAnimationFrame(animate);
 
@@ -38,3 +80,4 @@
   animate();
   </script>
 </body>
+

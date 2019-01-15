@@ -1,0 +1,40 @@
+<body>
+  <script src="https://threejs.org/build/three.min.js"></script>
+  <script>
+  const scene = new THREE.Scene();
+  const renderer = new THREE.WebGLRenderer();
+  const camera = new THREE.PerspectiveCamera();
+
+  document.body.appendChild((() => {
+    const canvas = renderer.domElement;
+
+    canvas.style.width = "400px";
+    canvas.style.height = "400px";
+
+    return canvas;
+  })());
+
+  scene.add((() => {
+    const geometry = new THREE.PlaneGeometry();
+
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      side: THREE.DoubleSide,
+    });
+
+    const mesh = new THREE.Mesh(geometry, material);
+
+    mesh.position.set(0, 0, -5);
+
+    return mesh;
+  })());
+
+  const animate = () => {
+    requestAnimationFrame(animate);
+
+    renderer.render(scene, camera);
+  };
+
+  animate();
+  </script>
+</body>

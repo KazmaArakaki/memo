@@ -1,3 +1,5 @@
+![Screenshot](https://github.com/KazmaArakaki/memo/raw/master/20200122/swift-pinch-to-scale/record.gif)
+
 - Components
   - ImageCanvasComponent
     - ImageCanvasView.swift

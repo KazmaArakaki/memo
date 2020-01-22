@@ -1,0 +1,13 @@
+- Components
+  - ImageCanvasComponent
+    - ImageCanvasView.swift
+    - ImageCanvasView.xib
+- Controllers
+  - MainViewController.swift
+- Resources
+  - Assets.xcassets
+  - LaunchScreen.storyboard
+  - Main.storyboard
+- AppDelegate.swift
+- SceneDelegate.swift
+- Info.plist

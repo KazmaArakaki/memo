@@ -4,8 +4,6 @@ import {
   Animated,
   Image,
   PanResponder,
-  Text,
-  TouchableOpacity,
   View,
 } from "react-native";
 

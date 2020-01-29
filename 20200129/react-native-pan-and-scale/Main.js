@@ -31,12 +31,12 @@ export default class MainComponnt extends React.Component {
       },
     };
 
-    this.state.translate.x.addListener((animatedValue) => {
-      this._translateOffsetX = animatedValue.value;
+    this.state.translate.x.addListener(({ value }) => {
+      this._translateOffsetX = value;
     });
 
-    this.state.translate.y.addListener((animatedValue) => {
-      this._translateOffsetY = animatedValue.value;
+    this.state.translate.y.addListener(({ value }) => {
+      this._translateOffsetY = value;
     });
 
     this.panResponder = PanResponder.create({

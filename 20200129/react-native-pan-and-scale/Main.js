@@ -121,8 +121,7 @@ export default class MainComponnt extends React.Component {
                     { scaleY: this.state.scale },
                   ],
                 }}>
-              <Image
-                  style={{
+              <Image style={{
                     width: this.state.imageSize.originalWidth,
                     height: this.state.imageSize.originalHeight,
                   }}

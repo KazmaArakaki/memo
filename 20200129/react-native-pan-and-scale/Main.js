@@ -60,19 +60,7 @@ export default class MainComponnt extends React.Component {
         });
       },
       onPanResponderMove: (event, gestureState) => {
-        if (gestureState.numberActiveTouches >= 3) {
-          this.state.scale.setValue(1);
-
-          this.state.translate.setOffset({
-            x: 0,
-            y: 0,
-          });
-
-          this.state.translate.setValue({
-            x: 0,
-            y: 0,
-          });
-        } else if (gestureState.numberActiveTouches >= 2) {
+        if (gestureState.numberActiveTouches >= 2) {
           const touch1 = event.touchHistory.touchBank[0];
           const touch2 = event.touchHistory.touchBank[1];
 
